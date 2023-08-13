@@ -5,20 +5,12 @@
 #          - Defence--> maherparams$def
 #_______________________________________________________________________________         
 
-
 #-------------------------------------------------------------------------------
 # Import serie A 21-22 data
 serieA_2122<- read.csv("data/serieA_21-22.csv")
-# Feature selection
-serieA_2122<- serieA_2122[,c("HomeTeam", "AwayTeam", "FTHG", "FTAG", "FTR")]
-# Create team dummies
-source("functions/team_dummies.R")
-serieA_2122<- team_dummies(serieA_2122)
 # Get teams's name
 teams<- names(table(serieA_2122[,"HomeTeam"]))
 #-------------------------------------------------------------------------------
-
-
 
 #-------------------------------------------------------------------------------
 # Parameters estimation
