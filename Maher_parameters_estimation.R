@@ -22,20 +22,20 @@ source("functions/loglike/Maher_loglike.R")
 parameters_guess= rep(0.5,40)#both attack and defense parameters (tot= 2n)
 
 # Optimization
-maherparams <- optim(parameters_guess, Maher_loglike, 
+Maher_parameters <- optim(parameters_guess, Maher_loglike, 
                      data=serieA_2122)$par
 
 
-names(maherparams) <- rep(teams,2)
+names(Maher_parameters) <- rep(teams,2)
 
-maherparams<- list(
-    att= maherparams[1:20],
-    def= maherparams[21:40]
+Maher_parameters<- list(
+    att= Maher_parameters[1:20],
+    def= Maher_parameters[21:40]
 )
 #-------------------------------------------------------------------------------
 
 #-------------------------------------------------------------------------------
 # To import parameters in future avoiding another estimation:
-save(maherparams,file = "parameters/maherparams.RData")
-load("parameters/maherparams.RData")
+save(Maher_parameters,file = "parameters/Maher_parameters.RData")
+load("parameters/Maher_parameters.RData")
 #-------------------------------------------------------------------------------
