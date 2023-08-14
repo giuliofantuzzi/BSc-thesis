@@ -3,16 +3,16 @@
 #_______________________________________________________________________________         
 
 Maher_loglike<- function(parameters, data) {
-    n= length(parameters)/2
-    alpha= parameters[1:n]
-    beta= parameters[(n+1):(2*n)]
-    n_rows<- nrow(data)
+    param_list <- Maher_relist_params(parameters)
+    att<- param_list$att
+    def<- param_list$def
+    
     loglike<- 0
-    for (k in 1:n_rows){
+    for (k in 1:nrow(data)){
         x<- data[k,"FTHG"]
         y<- data[k,"FTAG"]
-        lambda<- alpha[data[k,"HomeDummy"]]* beta[data[k,"AwayDummy"]]
-        mu<- alpha[data[k,"AwayDummy"]]* beta[data[k,"HomeDummy"]]
+        lambda<- att[data[k,"HomeTeam"]]* def[data[k,"AwayTeam"]]
+        mu<- att[data[k,"AwayTeam"]]* def[data[k,"HomeTeam"]]
         loglike = loglike+ (log(dpois(x,lambda)) + log(dpois(y,mu)))
     }
     return(-loglike) # Remember that max(f(x)) = -min(-f(x))
