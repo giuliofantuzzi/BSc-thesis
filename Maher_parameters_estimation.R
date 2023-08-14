@@ -1,8 +1,8 @@
 #_______________________________________________________________________________         
 #   About: parameters estimation for Maher model
 #          Coefficients have a "named-list" structure
-#          - Attack --> maherparams$att
-#          - Defence--> maherparams$def
+#          - Attack --> Maher_parameters$att
+#          - Defence--> Maher_parameters$def
 #_______________________________________________________________________________         
 
 #-------------------------------------------------------------------------------
@@ -27,6 +27,7 @@ Maher_parameters <- optim(par= unlist(parameters_guess),
                           data=serieA_2122
                           )$par
 #-------------------------------------------------------------------------------
+# Relist parameters
 Maher_parameters<- Maher_relist_params(Maher_parameters)
 #-------------------------------------------------------------------------------
 # To import parameters in future avoiding another estimation:
