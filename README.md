@@ -4,7 +4,7 @@ This repository contains an R implementation of my BSc thesis in Statistics (Uni
 ## Short abstract
 Football is undoubtedly one of the most beloved sports globally, and statistical analysis to understand the dynamics of the game and predict its outcomes is becoming increasingly important. The main objective of my thesis project is to evaluate the effectiveness of goal-based statistical models, which aim to predict the number of goals scored by the two teams in a football match.
 
-We will first try to find a probability distribution that is suitable for describing the number of goals scored, while in the following we will examine the main model proposals in the scientific literature. We will start with the model introduced by Maher, analyzing its strengths and limitations in order to understand which aspects are most relevant to include in statistical modeling of soccer outcomes. Among these, we will see how it will be appropriate to consider certain factors of each team's attacking and defensive strengths, the influence of playing at home (home effect), and the influence of the teams' physical and pshycological status on their performance. All this will lead to the Dixon and Coles model, one of the most renowned and widely used goal-based models in the world of sports statistics. The analyzed models were then implemented using R software, adopting a *from scratch* approach. Leveraging historical data from the 2021-2022 Serie A championship, the thesis will delve into specific applications of the model, even extending beyond the mere prediction of match outcomes.
+We will first try to find a probability distribution that is suitable for describing the number of goals scored, while in the following we will examine the main model proposals in the scientific literature. We will start with the model introduced by Maher, analyzing its strengths and limitations in order to understand which aspects are most relevant to include in statistical modeling of soccer outcomes. Among these, we will see how it will be appropriate to consider certain factors of each team's attacking and defensive strengths, the influence of playing at home (home effect), and the influence of the teams' physical and pshycological status on their performance. All this will lead to the Dixon and Coles model, one of the most renowned and widely used goal-based models in the world of sports statistics. The analyzed models were then implemented using *R software*, adopting a *from scratch* approach. Leveraging historical data from the 2021-2022 Serie A championship, the thesis will delve into specific applications of the model, even extending beyond the mere prediction of match outcomes.
 
 In summary, this thesis project aims to provide a comprehensive overview of goal-based models and to enhance their understanding through empirical applications to the 2021-2022 Serie A championship, thereby offering empirical evidence of their effectiveness.
 
@@ -12,9 +12,23 @@ In summary, this thesis project aims to provide a comprehensive overview of goal
 
 
 ## R scripts
-Some information about the following R scripts:
+Some information about the R scripts contained in this repository
+
+### Preliminary analysis
 - `poisson_approximation.R` : analysis of Poisson as an approximation for Teams's Goals
 - `home_effect.R` : an empirical proof of a home effect in football
+
+### Parameters estimation
 - `Maher_parameters_estimation.R` : estimation of Maher model's optimal parameters (using all season matches as training-set)
 - `DC_static_parameters_estimation.R` : estimation of Dixon-Coles static model's optimal parameters (using all season matches as training-set)
 - `DC_dinamic_parameters_estimation.R` : estimation of Dixon-Coles dinamic model's optimal parameters (over the 2nd half of the season)
+
+### Applications to the 2021-2022 Serie A championship
+- `DC_predictions_matchday38.R` : 
+- `abilities_over_time.R` :
+- `home&rho_over_time.R` : 
+
+### Models comparison and evaluation
+- `brier_score.R` :
+- `pseudoR2.R` :
+- `confusion_matrices.R` :
