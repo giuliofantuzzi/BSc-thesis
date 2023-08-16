@@ -2,8 +2,8 @@
 #   About: given the following parameters:
 #           - home goals (x)
 #           - away goals (y)
-#           - home team name (teamA)
-#           - away team name (teamB)
+#           - home team name (teamH)
+#           - away team name (teamA)
 #           - Maher coefficients (par) 
 #          Returns the joint probability of getting that result
 #_______________________________________________________________________________  
