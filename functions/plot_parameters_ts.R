@@ -1,6 +1,6 @@
 #_______________________________________________________________________________         
-#   About: ~ This function receive a team name as input and return a plot
-#            that shows team abilities over the second half of the league
+#   About: ~ This function receives a team name as input and returns a plot
+#            that shows the team's abilities over the second half of the league
 #          ~ Attack strength represented in blue
 #          ~ Defence weakness represented in red
 #_______________________________________________________________________________  
