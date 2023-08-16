@@ -1,5 +1,5 @@
 # Functions
-The estimation of models' optimal parameters is based on the optimization of a log-likelihood function. Check [loglike](/loglike) for more details.
+The estimation of models' optimal parameters is based on the optimization of a log-likelihood function. Check [loglike](loglike/) for more details.
 
 All the functions above were built starting from zero. Some of them are very general, while others refer to a specific model.
 
@@ -28,7 +28,7 @@ All the functions above were built starting from zero. Some of them are very gen
 
 - `Maher_pseudoR2_matchday` : this function is applied to a single matchday and returns s a kind of term of the "Pseudo-$R^2$ prod". The idea is to apply it by iteration on a set of validation matchdays and obtain the overall *Pseudo-*$R^2$ of the model
 
-- `Maher_relist_params.R` : this function is useful for the optimization phase to estimate model's parameters, since their structure is named-list like (see [parameters](/parameters)). More precisely, the R function *optim()* doesn't support the class *list* for its argument *par* (the initial guess of the optimization algorithm). The problem was easily solvable by passing the argument through *unlist()*, and then re-listing it (inside the loglike function) thanks to our *Maher_relist_params()*. In summary, this function allows us to preserve the named-list structure of the parameters.
+- `Maher_relist_params.R` : this function is useful for the optimization phase to estimate model's parameters, since their structure is named-list like (see [parameters](../parameters/)). More precisely, the R function *optim()* doesn't support the class *list* for its argument *par* (the initial guess of the optimization algorithm). The problem was easily solvable by passing the argument through *unlist()*, and then re-listing it (inside the loglike function) thanks to our *Maher_relist_params()*. In summary, this function allows us to preserve the named-list structure of the parameters.
 
 ### Dixon-Coles model functions
 
