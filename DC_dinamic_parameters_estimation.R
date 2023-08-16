@@ -46,6 +46,8 @@ parameters_guess<- list(att = DC_static_parameters$att[2:20],
                         home = as.numeric(DC_static_parameters$home),
                         rho = as.numeric(DC_static_parameters$rho)
                         )
+# Notice that the number of parameters is 2n instead of 2n+2 because of the sum-to-zero costraints
+# The function "DC_relist_params()" is meant to manage this
 
 # Optim preferences
 user_dots <- list(maxit = 15, 
@@ -96,7 +98,7 @@ for (i in 20:38){
         
         # Remember to re-list the estimated parameters
         DC_dinamic_parameters_xi<-DC_relist_params(DC_dinamic_parameters_xi)
-        #li aggiungo alla lista dei parametri
+        # Add them to parameters list
         par_list= append(par_list,DC_dinamic_parameters_xi)
         
         cat("Estimation using xi=",xi,"DONE!\n")
