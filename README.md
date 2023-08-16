@@ -12,7 +12,7 @@ In summary, this thesis project aims to provide a comprehensive overview of goal
 
 
 ## R scripts
-Some brief information about the R scripts contained in this repository (more details in the scripts' header)
+Some brief information about the R scripts contained in this repository (more details in the scripts' headers)
 
 ### Preliminary analysis
 - `poisson_approximation.R` : analysis of Poisson as an approximation for Teams's Goals
