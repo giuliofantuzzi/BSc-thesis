@@ -12,7 +12,7 @@ In summary, this thesis project aims to provide a comprehensive overview of goal
 
 
 ## R scripts
-Some information about the R scripts contained in this repository
+Some brief information about the R scripts contained in this repository (more details in the scripts' header)
 
 ### Preliminary analysis
 - `poisson_approximation.R` : analysis of Poisson as an approximation for Teams's Goals
@@ -24,11 +24,11 @@ Some information about the R scripts contained in this repository
 - `DC_dinamic_parameters_estimation.R` : estimation of Dixon-Coles dinamic model's optimal parameters (over the 2nd half of the season)
 
 ### Applications to the 2021-2022 Serie A championship
-- `DC_predictions_matchday38.R` : 
-- `abilities_over_time.R` :
-- `home&rho_over_time.R` : 
+- `DC_predictions_matchday38.R` : predictions of Dixon-Coles (dinamic) model for the last matchday (38th)
+- `abilities_over_time.R` : attack and defence abilities timeseries over the 2nd half of the league
+- `home&rho_over_time.R` : timeseries of home effect and correlation coefficients over the 2nd half of the league
 
 ### Models comparison and evaluation
-- `brier_score.R` :
-- `pseudoR2.R` :
-- `confusion_matrices.R` :
+- `brier_score.R` : R implementation of *Brier Score* metric to compare models
+- `pseudoR2.R` : R implementation of *Pseudo-$R^2$* metric to compare models
+- `confusion_matrices.R` : implementation of confusion matrices to analyze models' performances
