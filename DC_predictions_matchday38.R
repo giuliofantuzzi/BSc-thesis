@@ -1,6 +1,6 @@
 #_______________________________________________________________________________         
 #   About:  Application of Dixon-Coles (best) dinamic model to predict
-#           football outcomes of the last matchdat (38th)
+#           football outcomes of the last matchday (38th)
 #_______________________________________________________________________________         
 
 #-------------------------------------------------------------------------------
