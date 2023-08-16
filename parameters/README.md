@@ -40,7 +40,7 @@ The parameters of Dixon-Coles dinamic model follow a more complex structure. Sin
 - in each iteration, iterate over the different values of $\xi$;
 - For a given matchday and a fixed value of $\xi$, estimate the optimal parameters using MLE;
 
-This implementation has an impact on the structure of our parameters. In particular, the directory [DC_dinamic_parameters](/DC_dinamic_parameters) contains a `.RData` file for each matchday (2nd half of the league). Let's consider one of those files, i.e. `par_list_38.RData`. The name of the file indicates that its parameters were estimated to predict matchday n.38, using as training set all the matchdays from 1 to 37. We can import them as follows:
+This implementation has an impact on the structure of our parameters. In particular, the directory [DC_dinamic_parameters](/DC_dinamic_parameters/) contains a `.RData` file for each matchday (2nd half of the league). Let's consider one of those files, i.e. `par_list_38.RData`. The name of the file indicates that its parameters were estimated to predict matchday n.38, using as training set all the matchdays from 1 to 37. We can import them as follows:
 ```r
 >> load("path/to/file/par_list_38.RData")
 ```
