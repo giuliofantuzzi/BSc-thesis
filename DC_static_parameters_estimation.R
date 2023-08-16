@@ -28,6 +28,8 @@ parameters_guess <- list(
     def = rep(0, length(teams)-1) %>% `names<-`(teams[2:length(teams)]),
     home = 2,
     rho = 0)
+# Notice that the number of parameters is 2n instead of 2n+2 because of the sum-to-zero costraints
+# The function "DC_relist_params()" will manage this
 
 # Optim preferences
 user_dots <- list(maxit = 100,
