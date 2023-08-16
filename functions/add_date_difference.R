@@ -1,5 +1,5 @@
 #_______________________________________________________________________________         
-#   About: This function receive as inputs training and test set
+#   About: This function receives as inputs training and test set
 #          Then it calculates time-distances (in days) between
 #          each match of the training and the last date in the test-set
 #          Time differencies are added to the training set, which is returned
