@@ -47,7 +47,7 @@ parameters_guess<- list(att = DC_static_parameters$att[2:20],
                         rho = as.numeric(DC_static_parameters$rho)
                         )
 # Notice that the number of parameters is 2n instead of 2n+2 because of the sum-to-zero costraints
-# The function "DC_relist_params()" is meant to manage this
+# The function "DC_relist_params()"  will manage this
 
 # Optim preferences
 user_dots <- list(maxit = 15, 
