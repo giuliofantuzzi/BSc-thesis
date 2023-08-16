@@ -60,7 +60,7 @@ for (match in 20:38){
     current_matchday_staticDCpar=par_list[1:4]
     i=match-19
     DC_static_BS[i]= DC_brier_score_matchday(test=current_testset,
-                                         current_par = current_matchday_staticDCpar)
+                                             current_par = current_matchday_staticDCpar)
 }
 # Get a sort of Brier Score timeseries
 DC_static_BS_timeseries<- DC_static_BS/10
