@@ -1,5 +1,6 @@
 #_______________________________________________________________________________         
-#   About: profile loglike approach for Dixon-Coles dinamic model
+#   About: estimation of the best value of xi (parameter of dinamic Dixon-Coles)
+#          through a profile log-likelihood (PLL) approach
 #_______________________________________________________________________________  
 
 #-------------------------------------------------------------------------------
