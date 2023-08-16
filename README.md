@@ -31,5 +31,5 @@ Some brief information about the R scripts contained in this repository (more de
 
 ### Models comparison and evaluation
 - `brier_score.R` : R implementation of *Brier Score* metric to compare models
-- `pseudoR2.R` : R implementation of *Pseudo-$R^2$* metric to compare models
+- `pseudoR2.R` : R implementation of *Pseudo-*$R^2$ metric to compare models
 - `confusion_matrices.R` : implementation of confusion matrices to analyze models' performances
