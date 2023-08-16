@@ -34,4 +34,4 @@ Some brief information about the R scripts contained in this repository (more de
 - `pseudoR2.R` : R implementation of *Pseudo-*$R^2$ metric to compare models
 - `confusion_matrices.R` : implementation of confusion matrices to analyze models' performances
 
-As previously mentioned, all the analyzed models were implemented using a *from scratch* approach. This means that every function, from lower to higher level, was built starting from zero. For more details about these functions check the directory [functions](functions/). Models' optimal parameters, instead, can be found in the directory [parameters](parameters/)
+As previously mentioned, all the analyzed models were implemented using a *from scratch* approach. This means that every function, from lower to higher level, was built starting from zero. For more details about these functions check the directory [functions](functions/). Models' optimal parameters, instead, can be found in the directory [parameters](parameters/).
