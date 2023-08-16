@@ -8,6 +8,8 @@ serieA_2122<- read.csv("../data/serieA_21-22.csv")
 teams <- names(table(serieA_2122[,"HomeTeam"]))
 library(ggplot2)
 source("functions/plot_parameters_ts.R")
+#install.packages("patchwork")
+library(patchwork)
 #-------------------------------------------------------------------------------
 
 
@@ -20,7 +22,7 @@ plot_parameters_ts('Napoli')
 
 
 #-------------------------------------------------------------------------------
-# Apply fuction plot_parameters_ts() to all teams of the league
+# Apply function plot_parameters_ts() to all teams of the league
 Plots = lapply(1:20, function(i){
     #Get current team name
     team= teams[i]
@@ -29,10 +31,7 @@ Plots = lapply(1:20, function(i){
 })
 
 # Unique grid with all the plots
-# (result will change according to dimensions of the plot panel in Rstudio)
-
-#install.packages("patchwork")
-library(patchwork)
+# (Plot appearance changes according to dimensions of the plot panel in Rstudio)
 (Plots[[1]] | Plots[[2]] |Plots[[3]] | Plots[[4]]) /
     (Plots[[5]] | Plots[[6]] |Plots[[7]] | Plots[[8]]) /
     (Plots[[9]] | Plots[[10]] |Plots[[11]] | Plots[[12]]) /
