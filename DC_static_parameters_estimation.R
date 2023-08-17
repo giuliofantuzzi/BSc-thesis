@@ -4,7 +4,7 @@
 #          - Attack      --> DC_static_parameters$att
 #          - Defence     --> DC_static_parameters$def
 #          - Home effect --> DC_static_parameters$home
-#          - Corr effect --> DC_static_parameters$rho
+#          - Dep. effect --> DC_static_parameters$rho
 #_______________________________________________________________________________          
 
 #-------------------------------------------------------------------------------
