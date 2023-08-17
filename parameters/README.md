@@ -24,7 +24,7 @@ For example:
 ```
 ## Dixon-Coles static model
 The parameters of Dixon-Coles static model follow the same *"named-list"* structure. Besides attack and defence parameters ($\alpha$ and $\beta$), this model considers a home effect parameter ($\gamma$) and 
-a goal-correlation coefficien (\rho). Once estimated, we can accede the values as follows:
+a goal-dependence coefficien (\rho). Once estimated, we can accede the values as follows:
 ```r
 >> DC_static_parameters$att
 >> DC_static_parameters$def
