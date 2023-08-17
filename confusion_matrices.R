@@ -141,20 +141,20 @@ for (match in 20:38){
 # (1) Correlation matrices analysis with H-D-A classes
 #-------------------------------------------------------------------------------
 
-league_2nd_round_HDA<- serieA_2122[191:380,]
-league_2nd_round_HDA$DCstaticpredictions= DC_static_predictions_HDA
-league_2nd_round_HDA$DCdinamicpredictions= DC_dinamic_predictions_HDA
+league_2nd_half_HDA<- serieA_2122[191:380,]
+league_2nd_half_HDA$DCstaticpredictions= DC_static_predictions_HDA
+league_2nd_half_HDA$DCdinamicpredictions= DC_dinamic_predictions_HDA
 
 #Feature selection
-league_2nd_round_HDA<- league_2nd_round_HDA[,c("FTR","DCstaticpredictions", "DCdinamicpredictions")]
+league_2nd_half_HDA<- league_2nd_half_HDA[,c("FTR","DCstaticpredictions", "DCdinamicpredictions")]
 
 #Confusion Matrices
-DCstatic_conf_mat_HDA<- confusion_matrix(targets = as.factor(league_2nd_round_HDA$FTR),
-                                         predictions =as.factor(league_2nd_round_HDA$DCstaticpredictions)
+DCstatic_conf_mat_HDA<- confusion_matrix(targets = as.factor(league_2nd_half_HDA$FTR),
+                                         predictions =as.factor(league_2nd_half_HDA$DCstaticpredictions)
                                          
 )
-DCdinamic_conf_mat_HDA<- confusion_matrix(targets = as.factor(league_2nd_round_HDA$FTR),
-                                          predictions =as.factor(league_2nd_round_HDA$DCdinamicpredictions)
+DCdinamic_conf_mat_HDA<- confusion_matrix(targets = as.factor(league_2nd_half_HDA$FTR),
+                                          predictions =as.factor(league_2nd_half_HDA$DCdinamicpredictions)
 )
 
 # Plots
@@ -168,29 +168,29 @@ p1 + theme(plot.margin = unit(c(0,40,0,0), "pt")) +
 #-------------------------------------------------------------------------------
 # (2) Correlation matrices analysis with 1X - 2 classes
 #-------------------------------------------------------------------------------
-league_2nd_round_1X_2<- serieA_2122[191:380,]
-league_2nd_round_1X_2$DCstaticpredictions_1X_2= DC_static_predictions_1X_2
-league_2nd_round_1X_2$DCdinamicpredictions_1X_2= DC_dinamic_predictions_1X_2
+league_2nd_half_1X_2<- serieA_2122[191:380,]
+league_2nd_half_1X_2$DCstaticpredictions_1X_2= DC_static_predictions_1X_2
+league_2nd_half_1X_2$DCdinamicpredictions_1X_2= DC_dinamic_predictions_1X_2
 
 # Feature selection
-league_2nd_round_1X_2<- league_2nd_round_1X_2[,c("FTR","DCstaticpredictions_1X_2", "DCdinamicpredictions_1X_2")]
+league_2nd_half_1X_2<- league_2nd_half_1X_2[,c("FTR","DCstaticpredictions_1X_2", "DCdinamicpredictions_1X_2")]
 
 # Convert FTR into the logic of 1X (HomeTeam doesn't lose) and 2 (loses)
 # FTR will be always TRUE
-league_2nd_round_1X_2$FTR_target= TRUE
+league_2nd_half_1X_2$FTR_target= TRUE
 # Except when FTR=A (because HomeTeam looses)
-league_2nd_round_1X_2$FTR_target[league_2nd_round_1X_2$FTR == 'A']= FALSE
+league_2nd_half_1X_2$FTR_target[league_2nd_half_1X_2$FTR == 'A']= FALSE
 
 # Now convert in TRUE-FALSE our models predictions
-league_2nd_round_1X_2$DCstaticpredictions_1X_2=ifelse(league_2nd_round_1X_2$DCstaticpredictions_1X_2 == "1X", TRUE, FALSE)
-league_2nd_round_1X_2$DCdinamicpredictions_1X_2=ifelse(league_2nd_round_1X_2$DCdinamicpredictions_1X_2 == "1X", TRUE, FALSE)
+league_2nd_half_1X_2$DCstaticpredictions_1X_2=ifelse(league_2nd_half_1X_2$DCstaticpredictions_1X_2 == "1X", TRUE, FALSE)
+league_2nd_half_1X_2$DCdinamicpredictions_1X_2=ifelse(league_2nd_half_1X_2$DCdinamicpredictions_1X_2 == "1X", TRUE, FALSE)
 
 # Confusion Matrices
-DCstatic_conf_mat_1X_2<- confusion_matrix(targets = league_2nd_round_1X_2$FTR_target,
-                                          predictions =league_2nd_round_1X_2$DCstaticpredictions_1X_2
+DCstatic_conf_mat_1X_2<- confusion_matrix(targets = league_2nd_half_1X_2$FTR_target,
+                                          predictions =league_2nd_half_1X_2$DCstaticpredictions_1X_2
 )
-DCdinamic_conf_mat_1X_2<- confusion_matrix(targets =league_2nd_round_1X_2$FTR_target,
-                                           predictions =league_2nd_round_1X_2$DCdinamicpredictions_1X_2
+DCdinamic_conf_mat_1X_2<- confusion_matrix(targets =league_2nd_half_1X_2$FTR_target,
+                                           predictions =league_2nd_half_1X_2$DCdinamicpredictions_1X_2
 )
 
 # Plots
@@ -206,29 +206,29 @@ p4=plot_confusionmatrix(DCdinamic_conf_mat_1X_2,"Dixon-Coles model (dinamic)")
 #-------------------------------------------------------------------------------
 # (3) Correlation matrices analysis with 1 - X2 classes
 #-------------------------------------------------------------------------------
-league_2nd_round_1_X2<- serieA_2122[191:380,]
-league_2nd_round_1_X2$DCstaticpredictions_1_X2= DC_static_predictions_1_X2
-league_2nd_round_1_X2$DCdinamicpredictions_1_X2= DC_dinamic_predictions_1_X2
+league_2nd_half_1_X2<- serieA_2122[191:380,]
+league_2nd_half_1_X2$DCstaticpredictions_1_X2= DC_static_predictions_1_X2
+league_2nd_half_1_X2$DCdinamicpredictions_1_X2= DC_dinamic_predictions_1_X2
 
 #Feature selection
-league_2nd_round_1_X2<- league_2nd_round_1_X2[,c("FTR","DCstaticpredictions_1_X2", "DCdinamicpredictions_1_X2")]
+league_2nd_half_1_X2<- league_2nd_half_1_X2[,c("FTR","DCstaticpredictions_1_X2", "DCdinamicpredictions_1_X2")]
 
 # Convert FTR into the logic of X2 (Away teams doesn't lose) and 1 (loses)
 # FTR will be always TRUE
-league_2nd_round_1_X2$FTR_target= TRUE
+league_2nd_half_1_X2$FTR_target= TRUE
 # Except when FTR=H (because AwayTeam looses)
-league_2nd_round_1_X2$FTR_target[league_2nd_round_1_X2$FTR == 'H']= FALSE
+league_2nd_half_1_X2$FTR_target[league_2nd_half_1_X2$FTR == 'H']= FALSE
 
 # Now convert in TRUE-FALSE our models predictions
-league_2nd_round_1_X2$DCstaticpredictions_1_X2=ifelse(league_2nd_round_1_X2$DCstaticpredictions_1_X2 == "X2", TRUE, FALSE)
-league_2nd_round_1_X2$DCdinamicpredictions_1_X2=ifelse(league_2nd_round_1_X2$DCdinamicpredictions_1_X2 == "X2", TRUE, FALSE)
+league_2nd_half_1_X2$DCstaticpredictions_1_X2=ifelse(league_2nd_half_1_X2$DCstaticpredictions_1_X2 == "X2", TRUE, FALSE)
+league_2nd_half_1_X2$DCdinamicpredictions_1_X2=ifelse(league_2nd_half_1_X2$DCdinamicpredictions_1_X2 == "X2", TRUE, FALSE)
 
 # Confusion Matrices
-DCstatic_conf_mat_1_X2<- confusion_matrix(targets = league_2nd_round_1_X2$FTR_target,
-                                          predictions =league_2nd_round_1_X2$DCstaticpredictions_1_X2
+DCstatic_conf_mat_1_X2<- confusion_matrix(targets = league_2nd_half_1_X2$FTR_target,
+                                          predictions =league_2nd_half_1_X2$DCstaticpredictions_1_X2
 )
-DCdinamic_conf_mat_1_X2<- confusion_matrix(targets =league_2nd_round_1_X2$FTR_target,
-                                           predictions =league_2nd_round_1_X2$DCdinamicpredictions_1_X2
+DCdinamic_conf_mat_1_X2<- confusion_matrix(targets =league_2nd_half_1_X2$FTR_target,
+                                           predictions =league_2nd_half_1_X2$DCdinamicpredictions_1_X2
 )
 
 # Plots
