@@ -1,6 +1,6 @@
 # Statistical modelling for predicting football outcomes: an R implementation of the Dixon-Coles model and applications to the 2021-2022 serie A championship 
 
-This repository contains an R implementation of my BSc thesis in Statistics (University of Trieste)
+This repository contains an R implementation of my BSc thesis in Statistics (_University of Trieste_)
 ## Short abstract
 Football is undoubtedly one of the most beloved sports globally, and statistical analysis to understand the dynamics of the game and predict its outcomes is becoming increasingly important. The main objective of my thesis project is to evaluate the effectiveness of goal-based statistical models, which aim to predict the number of goals scored by the two teams competing in a football match.
 
