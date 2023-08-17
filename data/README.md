@@ -12,22 +12,23 @@ The table below shows all those variables:
 
 <div align="center">
     
-  Variable      | Type | Description                                                               |
-  ------------- |------|----------------------------------------------------------------------------
-  Date          | chr  |The date when the match was played (format *gg/mm/yyyy*)                   |
-  HomeTeam      | chr  |The team who plays the match on its own stadium                            |
-  AwayTeam      | chr  |The visiting team who plays the match away                                 |
-  FTHG          | int  |Goals scored by home team at the end of the match (*Full Time Home Goals*) |
-  FTAG          | int  |Goals scored by away team at the end of the match (*Full Time Away Goals*) |                                   
-  FTR           | chr  |Full time result (as *H-D-A*)                                              |
+  Variable      | Type   | Description                                                               |
+  ------------- |------- | ----------------------------------------------------------------------------
+  **Date**      | _chr_  | The date when the match was played (format *gg/mm/yyyy*)                   |
+  **HomeTeam**  | _chr_  | The team who plays the match on its own stadium                            |
+  **AwayTeam**  | _chr_  | The visiting team who plays the match away                                 |
+  **FTHG**      | _int_  | Goals scored by home team at the end of the match (*Full Time Home Goals*) |
+  **FTAG**      | _int_  | Goals scored by away team at the end of the match (*Full Time Away Goals*) |                                   
+  **FTR**       | _chr_  | Full time result (as *H-D-A*)                                              |
 
 </div>
 
-To import the dataset we can use the R function *read.csv()* :
+To import the dataset, we can use the R function *read.csv()* :
 ```r
 >> serieA_2122<- read.csv("path/to/file/serieA_21-22.csv")
 ```
-Then, to accede a particular a attribute there are at least 2 ways. For example:
+Then, there are at least two ways to accede a particular attribute. For example:
+
 ```r
 >> serieA_2122[,"FTHG"]
 
