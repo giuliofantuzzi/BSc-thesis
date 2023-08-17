@@ -31,7 +31,7 @@ a goal-correlation coefficien (\rho). Once estimated, we can accede the values a
 >> DC_static_parameters$home
 >> DC_static_parameters$rho
 ```
-Notice that * DC_static_parameters$att* and * DC_static_parameters$att* are named arrays of length *n*, while *DC_static_parameters$home* and *DC_static_parameters$rho* are single (named) values.
+Notice that *DC_static_parameters$att* and *DC_static_parameters$def* are named arrays of length *n*, while *DC_static_parameters$home* and *DC_static_parameters$rho* are single (named) values.
 
 ## Dixon-Coles dinamic model
 The parameters of Dixon-Coles dinamic model follow a more complex structure. Since these parameters are dinamic, they were estimated in association to each matchday over the 2nd half of the league. In addition to that, this model considers a time-decay parameter $\xi$. Its estimation requires a different approach (see `../xi_profile_loglike.R` ):  parameters $\alpha,\beta,\gamma,\rho$, besides being associated to a particular matchday, are also associated to a particular value of $\xi$. For this reason, it was convenient to proceed as follows:
