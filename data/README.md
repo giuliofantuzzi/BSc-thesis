@@ -5,7 +5,7 @@ It refers to the 2021-2022 edition of serie A championship, and contains informa
 Attributes were originally 105, but the vast majority of them was not necessary for the purpose of my project (lots of them were odds from different bookmakers).
 Before starting any type of analysis of data, I decided to select only the useful attributes from the dataset.
 
-The `data_preparation.R` script, as its name suggests, deals with data preparation and feature selection. Through this preliminary phase, the original
+The `feature_selection.R` script, as its name suggests, deals with a data preparation phase for feature selection. Through this preliminary step, the original
 dataset was converted into a new file ( `serieA_21-22.csv` ) containing all the variables needed to implement our goal-based models.
 
 The table below shows all those variables:
