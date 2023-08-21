@@ -6,11 +6,14 @@
 #_______________________________________________________________________________         
 
 #-------------------------------------------------------------------------------
-# Import data and functions
+# Import data,functions and libraries
 serieA_2122<- read.csv("data/serieA_21-22.csv")
 teams<- names(table(serieA_2122[,"HomeTeam"]))
+
 source("functions/loglike/Maher_loglike.R")
 source("functions/Maher_relist_params.R")
+
+library(dplyr)
 #-------------------------------------------------------------------------------
 
 #-------------------------------------------------------------------------------
