@@ -17,16 +17,17 @@
 #_______________________________________________________________________________     
 
 #-------------------------------------------------------------------------------
-# Import data
+# Import data, functions and libraries
 serieA_2122<- read.csv("data/serieA_21-22.csv")
 teams <- names(table(serieA_2122[,"HomeTeam"]))
 
-# Import libraries and functions
-library(dplyr)
 source("functions/DC_tau.R")
 source("functions/DC_relist_params.R")
 source("functions/add_date_difference.R")
 source("functions/loglike/DC_dinamic_loglike.R")
+
+
+library(dplyr)
 #-------------------------------------------------------------------------------
 
 
