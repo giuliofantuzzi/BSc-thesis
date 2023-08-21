@@ -8,15 +8,15 @@
 #_______________________________________________________________________________          
 
 #-------------------------------------------------------------------------------
-# Import data
+# Import data, functions and libraries
 serieA_2122<- read.csv("data/serieA_21-22.csv")
 teams <- names(table(serieA_2122[,"HomeTeam"]))
 
-# Import libraries and functions
-library(dplyr) # needed for the function "DC_relist_params()"
 source("functions/DC_relist_params.R")
 source("functions/DC_tau.R")
 source("functions/loglike/DC_static_loglike.R")
+
+library(dplyr) # needed for the function "DC_relist_params()" and to use %>%
 #-------------------------------------------------------------------------------
 
 #-------------------------------------------------------------------------------
