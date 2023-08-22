@@ -39,6 +39,7 @@ library(dplyr)
 # Remember that we already estimated DC static parameters on the entire season
 # To speed-up the optimization phase we will use them as initial guess
 # So the optimization algorithm should converge to the solution faster!
+# For our project purposes, we'll set hessian=F (we just need estimates, not s.e and CI) 
 
 # Initial guess
 load("parameters/DC_static_parameters.RData")

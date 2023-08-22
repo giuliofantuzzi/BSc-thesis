@@ -35,25 +35,26 @@ parameters_guess <- list(
 user_dots <- list(maxit = 100,
                   method = "BFGS",
                   interval = "profile",
-                  hessian = FALSE)
+                  hessian = TRUE)
 
 # Optimal parameters estimation
-DC_static_parameters= optim(par = unlist(parameters_guess),
-                     fn = DC_static_loglike,
-                     data=serieA_2122,
-                     method = user_dots$method,
-                     hessian = user_dots$hessian,
-                     control = list(maxit = user_dots$maxit))$par
+DC_static_opt= optim(par = unlist(parameters_guess),
+                            fn = DC_static_loglike,
+                            data=serieA_2122,
+                            method = user_dots$method,
+                            hessian = user_dots$hessian,
+                            control = list(maxit = user_dots$maxit))
 #-------------------------------------------------------------------------------
-
+# Get parameters and hessian
 #-------------------------------------------------------------------------------
-# Relist parameters
-DC_static_parameters<-DC_relist_params(DC_static_parameters)
+# Remember to relist parameters
+DC_static_parameters<-DC_relist_params(DC_static_opt$par)
+# Hessian
+DC_static_hessian<- DC_static_opt$hessian
 #-------------------------------------------------------------------------------
-
 
 #-------------------------------------------------------------------------------
 # Save/load parameters
 save(DC_static_parameters, file = "parameters/DC_static_parameters.RData")
-load("parameters/DC_static_parameters.RData")
+save(DC_static_hessian, file="parameters/hessian/DC_static_hessian.RData")
 #-------------------------------------------------------------------------------

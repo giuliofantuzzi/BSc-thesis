@@ -25,15 +25,20 @@ parameters_guess <- list( att = rep(0.5, length(teams)) %>% `names<-`(teams),
                           )
 
 # Optimization
-Maher_parameters <- optim(par= unlist(parameters_guess),
+Maher_opt <- optim(par= unlist(parameters_guess),
                           fn=Maher_loglike, 
-                          data=serieA_2122
-                          )$par
+                          data=serieA_2122,
+                          hessian = TRUE
+                          )
 #-------------------------------------------------------------------------------
 # Relist parameters
-Maher_parameters<- Maher_relist_params(Maher_parameters)
+Maher_parameters<- Maher_relist_params(Maher_opt$par)
+# Hessian
+Maher_hessian<- Maher_opt$hessian
+#-------------------------------------------------------------------------------
+
 #-------------------------------------------------------------------------------
 # To import parameters in future avoiding another estimation:
 save(Maher_parameters,file = "parameters/Maher_parameters.RData")
-load("parameters/Maher_parameters.RData")
+save(Maher_hessian, file="parameters/hessian/Maher_hessian.RData")
 #-------------------------------------------------------------------------------
