@@ -23,7 +23,7 @@ For example:
 >> Maher_parameters$def['Roma']
 ```
 ## Dixon-Coles static model
-The parameters of Dixon-Coles static model follow the same *"named-list"* structure. Besides attack and defence parameters ($\alpha$ and $\beta$), this model considers a home effect parameter ($\gamma$) and 
+Parameters of Dixon-Coles static model follow the same *"named-list"* structure. Besides attack and defence parameters ($\alpha$ and $\beta$), this model considers a home effect parameter ($\gamma$) and 
 a goal-dependence coefficien (\rho). Once estimated, we can accede the values as follows:
 ```r
 >> DC_static_parameters$att
@@ -34,7 +34,7 @@ a goal-dependence coefficien (\rho). Once estimated, we can accede the values as
 Notice that *DC_static_parameters$att* and *DC_static_parameters$def* are named arrays of length *n*, while *DC_static_parameters$home* and *DC_static_parameters$rho* are single (named) values.
 
 ## Dixon-Coles dinamic model
-The parameters of Dixon-Coles dinamic model follow a more complex structure. Since these parameters are dinamic, they were estimated in association to each matchday over the 2nd half of the league. In addition to that, this model considers a time-decay parameter $\xi$. Its estimation requires a different approach (see `../xi_profile_loglike.R` ):  parameters $\alpha,\beta,\gamma,\rho$, besides being associated to a particular matchday, are also associated to a particular value of $\xi$. For this reason, it was convenient to proceed as follows:
+Parameters of Dixon-Coles dinamic model follow a more complex structure. Since these parameters are dinamic, they were estimated in association to each matchday over the 2nd half of the league. In addition to that, this model considers a time-decay parameter $\xi$. Its estimation requires a different approach (see `../xi_profile_loglike.R` ):  parameters $\alpha,\beta,\gamma,\rho$, besides being associated to a particular matchday, are also associated to a particular value of $\xi$. For this reason, it was convenient to proceed as follows:
 
 - iterate over the different matchdays;
 - in each iteration, iterate over the different values of $\xi$;
