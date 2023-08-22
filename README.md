@@ -1,4 +1,4 @@
-# Statistical modelling for predicting football outcomes: an R implementation of the Dixon-Coles model and applications to the 2021-2022 serie A championship 
+# Statistical modelling for predicting football outcomes: an R implementation of the Dixon-Coles model and applications to the 2021-2022 Serie A championship 
 
 This repository contains an R implementation of my BSc thesis in Statistics (_University of Trieste_)
 ## Short abstract
