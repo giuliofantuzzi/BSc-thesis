@@ -22,7 +22,7 @@ DC_static_loglike<- function(parameters,data){
         lambda<- exp(att[data[k,"HomeTeam"]]+ def[data[k,"AwayTeam"]] + home)
         mu<- exp(att[data[k,"AwayTeam"]]+ def[data[k,"HomeTeam"]])
         #-----------------------------------------------------------------------
-        # if-else to ensure rho costraint ("brutal" but effective way)
+        # if-else to ensure rho constraint ("brutal" but effective way)
         if ((rho > max(c(-1/lambda,-1/mu))) & (rho < min(c(1,1/(lambda*mu))))){
             loglike = loglike+ (log(DC_tau(x,y,lambda,mu,rho))+
                                 dpois(x,lambda,log=TRUE)+
