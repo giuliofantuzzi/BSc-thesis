@@ -1,7 +1,7 @@
 #_______________________________________________________________________________
 #   About    : this script is meant to obtain standard errors and confidence
 #              intervals (95%) for models' estimates.
-#   IMPORTANT: For Dixon-Coles estimation, sum-to-zero costraints were considered
+#   IMPORTANT: For Dixon-Coles estimation, sum-to-zero constraints were considered
 #              I made this costraint being respected in a tricky way, when calling
 #              the function DC_relist_parameters()
 #              The idea was estimate all the parameters except Atalanta's ones
