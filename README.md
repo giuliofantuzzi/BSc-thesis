@@ -23,7 +23,7 @@ Some brief information about the R scripts contained in this repository (more de
 - `DC_static_parameters_estimation.R` : estimation of Dixon-Coles static model's optimal parameters (using all season matches as training-set)
 - `DC_dinamic_parameters_estimation.R` : estimation of Dixon-Coles dinamic model's optimal parameters (over the 2nd half of the season)
 - `xi_profile_loglike.R` : estimation of the best value of $\xi$ (parameter of dinamic Dixon-Coles model) through a profile log-likelihood (PLL) approach
-- `estimates_precision.R`  : determination of standard error and confidence intervals for models' estimates (estimates at the end of the season!)
+- `estimates_precision.R`  : determination of standard errors and confidence intervals for models' estimates (estimates using all season matches as training-set)
 
 ### Applications to the 2021-2022 Serie A championship
 - `DC_predictions_matchday38.R` : predictions of Dixon-Coles (dinamic) model for the last matchday (38th)
