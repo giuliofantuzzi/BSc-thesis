@@ -1,12 +1,26 @@
+#_______________________________________________________________________________
+#   About    : this script is meant to obtain standard errors and confidence
+#              intervals (95%) for models' estimates.
+#   IMPORTANT: For Dixon-Coles estimation, sum-to-zero costraints were considered
+#              I made this costraint being respected in a tricky way, when calling
+#              the function DC_relist_parameters()
+#              The idea was estimate all the parameters except Atalanta's ones
+#              and then obtain them as the "negative-sum" of the others
+#              Giving a measure of s.e and IC for Atalanta is not immediate
+#              Some empirical methods may be used (e.g. bootstrap), but for this
+#              analysis I decided to exclude atalanta!
+#_______________________________________________________________________________
+
+
 #-------------------------------------------------------------------------------
 # 1) MAHER MODEL
 load("parameters/Maher_parameters.RData")
 load("parameters/hessian/Maher_hessian.RData")
+
 Maher_se= sqrt(diag(solve(Maher_hessian)))
 Maher_lower= as.numeric(unlist(Maher_parameters)) - 1.96*as.numeric(Maher_se)/sqrt(380)
 Maher_upper= as.numeric(unlist(Maher_parameters)) + 1.96*as.numeric(Maher_se)/sqrt(380)
 
-#For LaTex
 round(Maher_se, digits=3)
 round(Maher_lower, digits=3)
 round(Maher_upper, digits=3)
@@ -17,7 +31,8 @@ round(Maher_upper, digits=3)
 load("parameters/DC_static_parameters.RData")
 load("parameters/hessian/DC_static_hessian.RData")
 
-# Parametro dell'atalanta in realtà non era un parametro da stimare...in sta analisi è tralasciato
+# Remember: we don't include the first team (Atalanta) in these calculations
+# We remove atalanta parameters by using -c(1,21) !
 DC_static_se= sqrt(diag(solve(DC_static_hessian)))
 DC_static_lower= as.numeric(unlist(DC_static_parameters)[-c(1,21)]) - 1.96*as.numeric(DC_static_se)/sqrt(380)
 DC_static_upper= as.numeric(unlist(DC_static_parameters)[-c(1,21)]) + 1.96*as.numeric(DC_static_se)/sqrt(380)
@@ -87,18 +102,9 @@ save(DC_dinamic_hessian, file="parameters/hessian/DC_dinamic_hessian.RData")
 load("parameters/DC_dinamic_parameters/DC_dinamic_parameters.RData")
 load("parameters/hessian/DC_dinamic_hessian.RData")
 
-#Qui devo tralasciare il parametro dell'atalanta
+# We won't consider Atalanta parameters
 DC_dinamic_se= sqrt(diag(solve(DC_dinamic_hessian)))
 DC_dinamic_lower= as.numeric(unlist(DC_dinamic_parameters)[-c(1,21)]) - 1.96*as.numeric(DC_dinamic_se)/sqrt(380)
 DC_dinamic_upper= as.numeric(unlist(DC_dinamic_parameters)[-c(1,21)]) + 1.96*as.numeric(DC_dinamic_se)/sqrt(380)
 
 #-------------------------------------------------------------------------------
-
-
-
-################################################################################
-
-#NB: alla loglike/optim io non passavo il parametro dell'atalanta...
-# quindi l'hessiano non mi da una misura di se per l'atalanta
-# Idea: fare la media degli s.e di attacco per parametro attacco atalanta
-# e stesso per difesa
