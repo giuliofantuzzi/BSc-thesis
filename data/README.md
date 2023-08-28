@@ -1,7 +1,7 @@
 # Dataset
 The dataset used for this project is available at the following link: https://www.football-data.co.uk/italym.php
 
-It refers to the 2021-2022 edition of serie A championship, and contains informations about all the matches (380) of the season. 
+It refers to the 2021-2022 edition of Serie A championship, and contains informations about all the matches (380) of the season. 
 Attributes were originally 105, but the vast majority of them was not necessary for the purpose of my project (lots of them were odds from different bookmakers).
 Before starting any type of analysis of data, I decided to select only the useful attributes from the dataset.
 
