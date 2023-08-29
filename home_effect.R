@@ -38,7 +38,7 @@ ggplot(goalscored_df, aes(x=Teams, y=Goals, fill=Stadium)) +
     geom_bar(stat="identity", width=0.6, position=position_dodge(),colour="black")+
     scale_fill_manual(values = c("#145A32", "#52BE80"))+
     theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1,face="bold"))+
-    ggtitle("Goal scored Serie A 2021-22") +
+    ggtitle("Goals scored Serie A 2021-22") +
     theme(plot.title = element_text(hjust = 0.5,face="bold"))
 
 #-------------------------------------------------------------------------------
@@ -57,7 +57,7 @@ ggplot(goalconceeded_df, aes(x=Teams, y=Goals, fill=Stadium)) +
     geom_bar(stat="identity", width=0.6, position=position_dodge(),colour="black")+
     scale_fill_manual( values=c("#641E16", "#EC7063"))+
     theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1,face="bold"))+
-    ggtitle("Goal conceeded Serie A 2021-22") +
+    ggtitle("Goals conceeded Serie A 2021-22") +
     theme(plot.title = element_text(hjust = 0.5,face="bold"))
 #-------------------------------------------------------------------------------
 
@@ -89,9 +89,9 @@ ggplot(goal_scored_difference_df, aes(x = teams_list,
     geom_bar(stat = "identity", width=0.6, position=position_dodge(),colour="black") +
     scale_fill_identity() +
     theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1,face="bold"))+
-    labs(title = "Goal scored difference Home vs Away",
-         x = "", 
-         y = "Goal scored difference")+
+    labs(title = "Goals scored difference Home vs Away",
+         x = "Teams", 
+         y = "Goals scored difference")+
     theme(plot.title = element_text(hjust = 0.5,face="bold"))
 
 # Goal conceeded difference Home vs Away
@@ -101,9 +101,9 @@ ggplot(goal_conceeded_difference_df, aes(x = teams_list,
     geom_bar(stat = "identity", width=0.6, position=position_dodge(),colour="black") +
     scale_fill_identity() +
     theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1,face="bold"))+
-    labs(title = "Goal conceeded difference Home vs Away",
-         x = "", 
-         y = "Goal conceeded difference")+
+    labs(title = "Goals conceeded difference Home vs Away",
+         x = "Teams", 
+         y = "Goals conceeded difference")+
     theme(plot.title = element_text(hjust = 0.5,face="bold"))
 #-------------------------------------------------------------------------------
 
@@ -152,7 +152,7 @@ ggplot(useful_result_difference_df, aes(x = teams_list,
     scale_fill_manual(values = c("#EC7063", "#52BE80"))+
     theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1,face="bold"))+
     labs(title = "Useful result difference Home vs Away",
-         x = "", 
+         x = "Teams", 
          y = "Useful result difference")+
     theme(plot.title = element_text(hjust = 0.5,face="bold"))
 #-------------------------------------------------------------------------------
