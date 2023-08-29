@@ -123,10 +123,10 @@ for (i in 1:length(teams_list)){
 # Useful results home and away
 useful_results_df <- data.frame(Stadium=rep(c("Home", "Away"),each=20),
                                 Teams=rep(teams_list,2),
-                                Result=c(useful_results_home,useful_results_away)
+                                Results=c(useful_results_home,useful_results_away)
                                 )
 
-ggplot(useful_results_df, aes(x=Teams, y=Result, fill=Stadium)) + 
+ggplot(useful_results_df, aes(x=Teams, y=Results, fill=Stadium)) + 
     geom_bar(stat="identity", width=0.6, position=position_dodge(),colour="black")+
     scale_fill_manual(values = c("#EC7063", "#52BE80"))+
     theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1,face="bold"))+
@@ -137,22 +137,22 @@ ggplot(useful_results_df, aes(x=Teams, y=Result, fill=Stadium)) +
 # Useful results difference home vs away
 
 # Dataframe
-useful_result_difference<- useful_results_home- useful_results_away
-useful_result_difference_df <- data.frame(teams_list,
-                                          useful_result_difference
+useful_results_difference<- useful_results_home- useful_results_away
+useful_results_difference_df <- data.frame(teams_list,
+                                           useful_results_difference
                                           )
-useful_result_difference_df$Better<- ifelse(useful_result_difference_df$useful_result_difference > 0, 
+useful_results_difference_df$Better<- ifelse(useful_results_difference_df$useful_results_difference > 0, 
                                             "Home", "Away")
 
 # Plot
 ggplot(useful_result_difference_df, aes(x = teams_list,
-                                        y = useful_result_difference, 
+                                        y = useful_results_difference, 
                                         fill = Better)) +
     geom_bar(stat = "identity", width=0.6, position=position_dodge(),colour="black") +
     scale_fill_manual(values = c("#EC7063", "#52BE80"))+
     theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1,face="bold"))+
-    labs(title = "Useful result difference Home vs Away",
+    labs(title = "Useful results difference Home vs Away",
          x = "Teams", 
-         y = "Useful result difference")+
+         y = "Useful results difference")+
     theme(plot.title = element_text(hjust = 0.5,face="bold"))
 #-------------------------------------------------------------------------------
