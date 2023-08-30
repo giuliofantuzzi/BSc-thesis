@@ -4,7 +4,7 @@
 
 #-------------------------------------------------------------------------------
 # Import data, libraries and functions
-serieA_2122<- read.csv("../data/serieA_21-22.csv")
+serieA_2122<- read.csv("data/serieA_21-22.csv")
 teams <- names(table(serieA_2122[,"HomeTeam"]))
 library(ggplot2)
 source("functions/plot_parameters_ts.R")
