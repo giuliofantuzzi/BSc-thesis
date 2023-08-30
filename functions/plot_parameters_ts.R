@@ -14,7 +14,7 @@ plot_parameters_ts<- function(team){
     for (match in 20:38){
         #.......................................................................
         # Load parameters estimated for the current matchday
-        filepath<- paste("parameters/xi/par_list_",match,".RData",sep="")
+        filepath<- paste("parameters/DC_dinamic_parameters/par_list_",match,".RData",sep="")
         load(filepath)
         #.......................................................................
         # Select parameters associated to the best xi (from profile loglike)
