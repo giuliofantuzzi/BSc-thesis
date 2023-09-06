@@ -8,7 +8,7 @@ Firstly, we will seek to identify a suitable probability distribution to describ
 
 In summary, this thesis project aims to provide a comprehensive overview of goal-based models and to enhance their understanding through empirical applications to the 2021-2022 Serie A championship, thereby offering empirical evidence of their effectiveness.
 
-
+For more details about my thesis project, see [report](report/)
 
 
 ## R scripts
